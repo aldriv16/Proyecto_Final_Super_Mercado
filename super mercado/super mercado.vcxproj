@@ -141,13 +141,16 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="marcas.cpp" />
     <ClCompile Include="puestos.cpp" />
+    <ClCompile Include="Ventas.cpp" />
+    <ClCompile Include="Ventas_detalle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clientes.h" />
-    <ClInclude Include="conexionBD.h" />
     <ClInclude Include="empleados.h" />
     <ClInclude Include="marcas.h" />
     <ClInclude Include="puestos.h" />
+    <ClInclude Include="Ventas.h" />
+    <ClInclude Include="Ventas_detalle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

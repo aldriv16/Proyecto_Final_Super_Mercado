@@ -5,6 +5,8 @@
 #include "Puestos.h"
 #include "Marcas.h"
 #include "Empleados.h"
+#include "Ventas.h"
+#include "Ventas_detalle.h"
 
 using namespace std;
 
@@ -109,6 +111,49 @@ void menuEmpleados(MYSQL* conn) {
     } while (opcion != 0);
 }
 
+void menuVentas(MYSQL* conn) {
+    Ventas ventas(conn);
+    Ventas_detalle detalle(conn);
+    int opcion;
+    do {
+        cout << "\n--- MENU VENTAS (MAESTRO-DETALLE) ---\n";
+        cout << "1. Insertar venta y detalles\n";
+        cout << "2. Mostrar ventas y detalles\n";
+        cout << "3. Actualizar venta\n";
+        cout << "4. Eliminar venta\n";
+        cout << "0. Volver\n";
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+        cin.ignore();
+
+        switch (opcion) {
+        case 1: {
+            ventas.insertar();
+            char agregarMas;
+            do {
+                detalle.insertar();
+                cout << "¿Agregar otro detalle a esta venta? (s/n): ";
+                cin >> agregarMas; cin.ignore();
+            } while (agregarMas == 's' || agregarMas == 'S');
+            break;
+        }
+        case 2:
+            ventas.mostrar();
+            // Puedes agregar aquí un método para mostrar detalles por venta
+            break;
+        case 3:
+            ventas.actualizar();
+            break;
+        case 4:
+            ventas.eliminar();
+            break;
+        case 0: break;
+        default: cout << "Opcion invalida.\n"; break;
+        }
+    } while (opcion != 0);
+}
+
+
 // Menú principal
 int main() {
     conexionBD conexion;
@@ -123,6 +168,7 @@ int main() {
         cout << "2. Puestos\n";
         cout << "3. Marcas\n";
         cout << "4. Empleados\n";
+        cout << "5. ventas y detalle (master)";
         cout << "0. Salir\n";
         cout << "Seleccione una opcion: ";
         cin >> opcion;
@@ -133,6 +179,7 @@ int main() {
         case 2: menuPuestos(conn); break;
         case 3: menuMarcas(conn); break;
         case 4: menuEmpleados(conn); break;
+        case 5: menuVentas(conn); break;
         case 0: cout << "Saliendo del sistema...\n"; break;
         default: cout << "Opcion invalida. Intente de nuevo.\n"; break;
         }

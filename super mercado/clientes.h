@@ -1,7 +1,6 @@
 #pragma once
 #ifndef CLIENTE_H
 #define CLIENTE_H
-
 #include <mysql.h>
 #include <string>
 #include <iostream>
