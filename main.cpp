@@ -6,6 +6,7 @@
 #include "Empleados.h"
 #include "Ventas.h"
 #include "Ventas_detalle.h"
+#include <regex>
 
 using namespace std;
 
@@ -110,6 +111,8 @@ void menuEmpleados(MYSQL* conn) {
     } while (opcion != 0);
 }
 
+
+
 void menuVentas(MYSQL* conn) {
     Ventas ventas(conn);
     Ventas_detalle detalle(conn);
@@ -127,36 +130,94 @@ void menuVentas(MYSQL* conn) {
 
         switch (opcion) {
         case 1: {
-          int  id_venta=ventas.insertar();
+            // verifador nit
+            string nitIngresado;
+            cout << "Ingrese el NIT del cliente: ";
+            getline(cin, nitIngresado);
+
+            // nit debe ser de 8 dijitos cuidado companeros 
+            while (!(nitIngresado == "C/F" || nitIngresado == "c/f" ||
+                regex_match(nitIngresado, regex("^\\d{6,8}-\\d{1}$")))) {
+                cout << "NIT inválido. Formato esperado: ########-# o C/F\n";
+                cout << "Ingrese nuevamente el NIT: ";
+                getline(cin, nitIngresado);
+            }
+
+            // crea una consulta para ver si existe 
+            int id_cliente = -1;
+            string queryBuscar = "SELECT id_cliente, CONCAT(nombres, ' ', apellidos) AS nombre_completo "
+                "FROM clientes WHERE nit = '" + nitIngresado + "'";
+            if (mysql_query(conn, queryBuscar.c_str()) == 0) {
+                MYSQL_RES* res = mysql_store_result(conn);
+                MYSQL_ROW row = mysql_fetch_row(res);
+                if (row) {
+                    id_cliente = stoi(row[0]);
+                    cout << "Cliente encontrado: " << row[1] << endl;
+                }
+                else {
+                    cout << "Cliente no encontrado. Registre los siguientes datos.\n";
+                    string nombres, apellidos, telefono, correo;
+                    cout << "Nombres: ";        getline(cin, nombres);
+                    cout << "Apellidos: ";      getline(cin, apellidos);
+                    cout << "Teléfono: ";       getline(cin, telefono);
+                    cout << "Correo electrónico: "; getline(cin, correo);
+
+                    string queryInsertar = "INSERT INTO clientes (nombres, apellidos, nit, telefono, correo_electronico, fecha_ingreso) VALUES ('" +
+                        nombres + "', '" + apellidos + "', '" + nitIngresado + "', '" +
+                        telefono + "', '" + correo + "', NOW())";
+                    if (mysql_query(conn, queryInsertar.c_str()) == 0) {
+                        id_cliente = static_cast<int>(mysql_insert_id(conn));
+                        cout << "Cliente registrado exitosamente.\n";
+                    }
+                    else {
+                        cerr << "Error al insertar cliente: " << mysql_error(conn) << endl;
+                        break;  // Abortamos la inserción de la venta
+                    }
+                }
+                mysql_free_result(res);
+            }
+            else {
+                cerr << "Error al consultar cliente: " << mysql_error(conn) << endl;
+                break;
+            }
+
+             int id_venta = ventas.insertar();
+            // si o funciona borara aqui
             char agregarMas;
             do {
                 detalle.insertar(id_venta);
                 cout << "¿Agregar otro detalle a esta venta? (s/n): ";
-                cin >> agregarMas; cin.ignore();
+                cin >> agregarMas;
+                cin.ignore();
             } while (agregarMas == 's' || agregarMas == 'S');
+
             break;
         }
-        case 2:
+        case 2: {
             ventas.mostrar();
             int id_venta_detalle;
             cout << "Ingrese el ID de la venta para ver sus detalles (0 para omitir): ";
-            cin >> id_venta_detalle; cin.ignore();
+            cin >> id_venta_detalle;
+            cin.ignore();
             if (id_venta_detalle != 0) {
                 detalle.mostrarPorVenta(id_venta_detalle);
             }
             break;
+        }
         case 3:
             ventas.actualizar();
             break;
         case 4:
             ventas.eliminar();
             break;
-        case 0: break;
-        default: cout << "Opcion invalida.\n"; break;
+        case 0:
+            break;
+        default:
+            cout << "Opcion invalida.\n";
+            break;
         }
     } while (opcion != 0);
 }
-
 
 // Menú principal
 int main() {

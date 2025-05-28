@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
+#include <regex>
+
 using namespace std;
 
 string fecha_factura;
@@ -27,9 +29,39 @@ int Ventas::insertar() {
     No_factura = 1800 + rand() % 2000;
     serie = 1 + rand() % 10;
 
+
     
-   
+   string queryclientes = "SELECT id_cliente, nombres FROM clientes";
+if (mysql_query(conn, queryclientes.c_str()) == 0) {
+    MYSQL_RES* res = mysql_store_result(conn);
+    MYSQL_ROW row;
+
+    cout << "\nClientes disponibles:\n";
+    while ((row = mysql_fetch_row(res))) {
+        cout << "ID: " << row[0] << " - Cliente : " << row[1] << endl;
+    }
+    mysql_free_result(res);
+} else {
+    cerr << "Error al consultar los clientes: " << mysql_error(conn) << endl;
+}
+
     cout << "ID Cliente: "; cin >> id_cliente; cin.ignore();
+    cout << "";
+    string queryempleados= "SELECT id_empleado, nombres FROM empleados";
+    if (mysql_query(conn, queryempleados.c_str()) == 0) {
+        MYSQL_RES* res = mysql_store_result(conn);
+        MYSQL_ROW row;
+
+        cout << "\nEmpleados disponibles:\n";
+        while ((row = mysql_fetch_row(res))) {
+            cout << "ID: " << row[0] << " - Empleados: " << row[1] << endl;
+        }
+        mysql_free_result(res);
+    }
+    else {
+        cerr << "Error al consultar los empleados: " << mysql_error(conn) << endl;
+    };
+
     cout << "ID Empleado: "; cin >> id_empleado; cin.ignore();
     int Pk_compuesta = stoi(to_string(No_factura) + to_string(id_empleado));
     int id_venta = Pk_compuesta;
@@ -90,6 +122,20 @@ void Ventas::actualizar() {
 }
 
 void Ventas::eliminar() {
+    string queryventas = "SELECT id_venta, No_factura ,id_cliente, fecha_factura FROM ventas";
+    if (mysql_query(conn, queryventas.c_str()) == 0) {
+        MYSQL_RES* res = mysql_store_result(conn);
+        MYSQL_ROW row;
+
+        cout << "\nVentas realizadas:\n";
+        while ((row = mysql_fetch_row(res))) {
+            cout << "ID: " << row[0] << " - no.factura : " << row[1] << " id_cliente "<<row[2]<<"fecha factura " <<row[3]<< endl;
+        }
+        mysql_free_result(res);
+    }
+    else {
+        cerr << "Error al consultar las ventas: " << mysql_error(conn) << endl;
+    };
     int id_venta;
     cout << "ID de la venta a eliminar: ";
     cin >> id_venta;
