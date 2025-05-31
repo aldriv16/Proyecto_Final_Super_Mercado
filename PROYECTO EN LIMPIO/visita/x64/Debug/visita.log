@@ -1,0 +1,13 @@
+﻿  cliente.cpp
+  Compra.cpp
+  ConexionBD.cpp
+  empleado.cpp
+  MAIN.cpp
+  marca.cpp
+  producto.cpp
+  proveedores.cpp
+  puesto.cpp
+  venta.cpp
+  ventaDetalle.cpp
+  Generando código...
+  visita.vcxproj -> C:\Users\GABRIELA\Desktop\trabajo\x64\Debug\visita.exe
