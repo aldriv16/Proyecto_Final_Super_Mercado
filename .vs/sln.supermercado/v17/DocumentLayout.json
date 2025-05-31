@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\excal\\source\\repos\\Proyecto_Final_Super_Mercado\\",
+  "WorkspaceRootPath": "C:\\Users\\GABRIELA\\Desktop\\Proyecto_Final_Super_Mercado\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D9ECBE22-92E2-48D3-A92E-CEF958194749}|super mercado\\super mercado.vcxproj|C:\\Users\\excal\\source\\repos\\Proyecto_Final_Super_Mercado\\super mercado\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{D9ECBE22-92E2-48D3-A92E-CEF958194749}|super mercado\\super mercado.vcxproj|C:\\Users\\GABRIELA\\Desktop\\Proyecto_Final_Super_Mercado\\super mercado\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D9ECBE22-92E2-48D3-A92E-CEF958194749}|super mercado\\super mercado.vcxproj|solutionrelative:super mercado\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9ECBE22-92E2-48D3-A92E-CEF958194749}|super mercado\\super mercado.vcxproj|C:\\Users\\excal\\source\\repos\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas_detalle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D9ECBE22-92E2-48D3-A92E-CEF958194749}|super mercado\\super mercado.vcxproj|solutionrelative:super mercado\\Ventas_detalle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D9ECBE22-92E2-48D3-A92E-CEF958194749}|super mercado\\super mercado.vcxproj|C:\\Users\\GABRIELA\\Desktop\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D9ECBE22-92E2-48D3-A92E-CEF958194749}|super mercado\\super mercado.vcxproj|solutionrelative:super mercado\\Ventas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9ECBE22-92E2-48D3-A92E-CEF958194749}|super mercado\\super mercado.vcxproj|C:\\Users\\excal\\source\\repos\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D9ECBE22-92E2-48D3-A92E-CEF958194749}|super mercado\\super mercado.vcxproj|solutionrelative:super mercado\\Ventas.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D9ECBE22-92E2-48D3-A92E-CEF958194749}|super mercado\\super mercado.vcxproj|C:\\Users\\GABRIELA\\Desktop\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas_detalle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D9ECBE22-92E2-48D3-A92E-CEF958194749}|super mercado\\super mercado.vcxproj|solutionrelative:super mercado\\Ventas_detalle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,38 +28,40 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\excal\\source\\repos\\Proyecto_Final_Super_Mercado\\super mercado\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\GABRIELA\\Desktop\\Proyecto_Final_Super_Mercado\\super mercado\\main.cpp",
               "RelativeDocumentMoniker": "super mercado\\main.cpp",
-              "ToolTip": "C:\\Users\\excal\\source\\repos\\Proyecto_Final_Super_Mercado\\super mercado\\main.cpp",
+              "ToolTip": "C:\\Users\\GABRIELA\\Desktop\\Proyecto_Final_Super_Mercado\\super mercado\\main.cpp",
               "RelativeToolTip": "super mercado\\main.cpp",
-              "ViewState": "AgIAALAAAAAAAAAAAAAAALAAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-17T23:12:57.164Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Ventas_detalle.h",
-              "DocumentMoniker": "C:\\Users\\excal\\source\\repos\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas_detalle.h",
+              "DocumentMoniker": "C:\\Users\\GABRIELA\\Desktop\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas_detalle.h",
               "RelativeDocumentMoniker": "super mercado\\Ventas_detalle.h",
-              "ToolTip": "C:\\Users\\excal\\source\\repos\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas_detalle.h",
+              "ToolTip": "C:\\Users\\GABRIELA\\Desktop\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas_detalle.h",
               "RelativeToolTip": "super mercado\\Ventas_detalle.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-17T23:12:42.217Z"
+              "WhenOpened": "2025-05-17T23:12:42.217Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Ventas.h",
-              "DocumentMoniker": "C:\\Users\\excal\\source\\repos\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas.h",
+              "DocumentMoniker": "C:\\Users\\GABRIELA\\Desktop\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas.h",
               "RelativeDocumentMoniker": "super mercado\\Ventas.h",
-              "ToolTip": "C:\\Users\\excal\\source\\repos\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas.h",
+              "ToolTip": "C:\\Users\\GABRIELA\\Desktop\\Proyecto_Final_Super_Mercado\\super mercado\\Ventas.h",
               "RelativeToolTip": "super mercado\\Ventas.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-17T23:11:29.204Z"
+              "WhenOpened": "2025-05-17T23:11:29.204Z",
+              "EditorCaption": ""
             }
           ]
         }
